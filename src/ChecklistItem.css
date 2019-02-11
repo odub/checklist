@@ -1,2 +1,15 @@
-.ChecklistItem {
+.ChecklistItem.selected {
+  background: #ddd;
+}
+
+.ChecklistItem:hover {
+  background: #eee;
+}
+
+.ChecklistCell {
+  padding: 8px 4px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
 }

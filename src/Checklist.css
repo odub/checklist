@@ -1,2 +1,8 @@
-.ChecklistItem {
+.Checklist {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.ChecklistRow {
+  display: grid;
 }
