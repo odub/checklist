@@ -12,9 +12,9 @@ class ChecklistHeader extends Component {
         }}
       >
         <div className="ChecklistCell" />
-        {this.props.cols.map(({ name }) => {
+        {this.props.cols.map(({ name }, i) => {
           return (
-            <div className="ChecklistCell" title={name}>
+            <div className="ChecklistCell" title={name} key={i}>
               {name}
             </div>
           );

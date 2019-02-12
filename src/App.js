@@ -14,7 +14,11 @@ class App extends Component {
     return (
       <div className="App">
         <div className="Wrapper">
-          <Checklist items={LIST_DATA_FORMATTED} cols={COLUMNS} />
+          <Checklist
+            items={LIST_DATA_FORMATTED}
+            cols={COLUMNS}
+            disabledCondition={item => item.status !== "Available"}
+          />
         </div>
       </div>
     );

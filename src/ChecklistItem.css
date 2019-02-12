@@ -1,3 +1,8 @@
+.ChecklistItem {
+  cursor: pointer;
+  border-top: 1px solid #ccc;
+}
+
 .ChecklistItem.selected {
   background: #ddd;
 }
@@ -7,7 +12,7 @@
 }
 
 .ChecklistCell {
-  padding: 8px 4px;
+  padding: 1rem 1rem;
   overflow-x: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
