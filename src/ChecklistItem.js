@@ -24,7 +24,7 @@ class ChecklistItem extends Component {
             type="checkbox"
             disabled={this.props.disabled}
             checked={this.props.selected}
-            readOnly={true}
+            readOnly
           />
         </div>
         {this.props.cols.map(({ id }, i) => {
