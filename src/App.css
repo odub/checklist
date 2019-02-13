@@ -1,11 +1,24 @@
 .App {
   text-align: center;
+  padding: 0 20px;
 }
 
 .Wrapper {
-  margin: 20px auto;
-  padding: 0 20px;
+  background-color: white;
+  border: 1px solid #ccc;
   max-width: 960px;
+  margin: 20px auto;
+}
+
+.HeaderControls {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 20px;
+}
+
+.HeaderControlsItem {
+  margin-right: 50px;
 }
 
 /* Hack to keep the Checklist component simple */

@@ -1,5 +1,6 @@
 .SelectAll {
   display: flex;
+  min-width: 120px;
 }
 .SelectAllCheckbox {
   margin-top: 0.4em;
