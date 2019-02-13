@@ -1,0 +1,7 @@
+.SelectAll {
+  display: flex;
+}
+.SelectAllCheckbox {
+  margin-top: 0.4em;
+  margin-right: 5px;
+}

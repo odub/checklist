@@ -4,6 +4,7 @@ import Checklist from "./Checklist";
 import { LIST_DATA, COLUMNS } from "./constants";
 import { formatStatus } from "./utils";
 import DownloadButton from "./DownloadButton";
+import SelectAll from "./SelectAll";
 
 const LIST_DATA_FORMATTED = LIST_DATA.map(item => ({
   ...item,
@@ -20,48 +21,26 @@ class App extends Component {
   state = {
     selection: new Set()
   };
-  constructor(props) {
-    super(props);
-    this.selectAllCheckbox = React.createRef();
-  }
-  setIndeterminate = () => {
-    this.selectAllCheckbox.current.indeterminate =
-      !!this.state.selection.size &&
-      this.state.selection.size !== LIST_DATA_FORMATTED.length;
-  };
   render() {
     return (
       <div className="App">
         <div className="Wrapper">
-          <div className="SelectionStatus">
-            <label>
-              <input
-                type="checkbox"
-                ref={this.selectAllCheckbox}
-                checked={
-                  !!this.state.selection.size &&
-                  this.state.selection.size === LIST_DATA_FORMATTED.length
-                }
-                onClick={() => {
-                  if (MAX_SELECTION.size === this.state.selection.size) {
-                    this.setState({ selection: new Set() }, () =>
-                      this.setIndeterminate()
-                    );
-                    return;
-                  }
-                  this.setState({ selection: MAX_SELECTION }, () =>
-                    this.setIndeterminate()
-                  );
-                }}
-                readOnly
+          <div className="HeaderControls">
+            <div className="HeaderControlsItem">
+              <SelectAll
+                items={LIST_DATA_FORMATTED}
+                selection={this.state.selection}
+                maxSelection={MAX_SELECTION}
+                updateSelection={selection => this.setState({ selection })}
               />
-              {this.state.selection.size} Selected
-            </label>
+            </div>
+            <div className="HeaderControlsItem">
+              <DownloadButton
+                items={LIST_DATA_FORMATTED}
+                selection={this.state.selection}
+              />
+            </div>
           </div>
-          <DownloadButton
-            items={LIST_DATA_FORMATTED}
-            selection={this.state.selection}
-          />
           <Checklist
             items={LIST_DATA_FORMATTED}
             cols={COLUMNS}
@@ -69,7 +48,7 @@ class App extends Component {
             onToggleSelection={i => {
               const selection = new Set(this.state.selection);
               selection.has(i) ? selection.delete(i) : selection.add(i);
-              this.setState({ selection }, () => this.setIndeterminate());
+              this.setState({ selection });
             }}
           />
         </div>
