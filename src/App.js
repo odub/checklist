@@ -3,6 +3,7 @@ import "./App.css";
 import Checklist from "./Checklist";
 import { LIST_DATA, COLUMNS } from "./constants";
 import { formatStatus } from "./utils";
+import DownloadButton from "./DownloadButton";
 
 const LIST_DATA_FORMATTED = LIST_DATA.map(item => ({
   ...item,
@@ -57,25 +58,10 @@ class App extends Component {
               {this.state.selection.size} Selected
             </label>
           </div>
-          <button
-            className="DownloadButton"
-            disabled={!this.state.selection.size}
-            onClick={() => {
-              window.alert(
-                Array.from(this.state.selection)
-                  .sort()
-                  .map(i =>
-                    [
-                      LIST_DATA_FORMATTED[i].path,
-                      LIST_DATA_FORMATTED[i].device
-                    ].join("\n")
-                  )
-                  .join("\n\n")
-              );
-            }}
-          >
-            Download Selected
-          </button>
+          <DownloadButton
+            items={LIST_DATA_FORMATTED}
+            selection={this.state.selection}
+          />
           <Checklist
             items={LIST_DATA_FORMATTED}
             cols={COLUMNS}
