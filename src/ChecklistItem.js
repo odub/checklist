@@ -15,9 +15,7 @@ class ChecklistItem extends Component {
         style={{
           gridTemplateColumns: colsToTemplate(this.props.cols)
         }}
-        onClick={() =>
-          !this.props.disabled && this.props.handleToggleSelection()
-        }
+        onClick={() => !this.props.disabled && this.props.toggleSelection()}
       >
         <div className="ChecklistCell">
           <input

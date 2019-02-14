@@ -4,10 +4,6 @@ import ChecklistItem from "./ChecklistItem";
 import ChecklistHeader from "./ChecklistHeader";
 
 class Checklist extends Component {
-  static defaultProps = {
-    disabledCondition: () => false
-  };
-
   render() {
     return (
       <div className="Checklist">
@@ -21,7 +17,11 @@ class Checklist extends Component {
             cols={this.props.cols}
             disabled={item.disabled}
             selected={this.props.selection.has(i)}
-            handleToggleSelection={() => this.props.onToggleSelection(i)}
+            toggleSelection={() => {
+              const selection = new Set(this.props.selection);
+              selection.has(i) ? selection.delete(i) : selection.add(i);
+              this.props.updateSelection(selection);
+            }}
           />
         ))}
       </div>

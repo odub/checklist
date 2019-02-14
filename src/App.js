@@ -45,11 +45,7 @@ class App extends Component {
             items={LIST_DATA_FORMATTED}
             cols={COLUMNS}
             selection={this.state.selection}
-            onToggleSelection={i => {
-              const selection = new Set(this.state.selection);
-              selection.has(i) ? selection.delete(i) : selection.add(i);
-              this.setState({ selection });
-            }}
+            updateSelection={selection => this.setState({ selection })}
           />
         </div>
       </div>
