@@ -1,5 +1,5 @@
 .Checklist {
-  background-color: #fff;
+  overflow: auto;
 }
 
 .ChecklistRow {
