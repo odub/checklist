@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import Checklist from "./Checklist";
+import Checklist from "./components/Checklist";
 import { LIST_DATA, COLUMNS } from "./constants";
 import { formatStatus } from "./utils";
-import DownloadButton from "./DownloadButton";
-import SelectAll from "./SelectAll";
+import DownloadButton from "./components/DownloadButton";
+import SelectAll from "./components/SelectAll";
 
 const LIST_DATA_FORMATTED = LIST_DATA.map(item => ({
   ...item,

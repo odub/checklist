@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ChecklistItem.css";
-import { colsToTemplate } from "./utils";
+import { colsToTemplate } from "../utils";
 
 class ChecklistItem extends Component {
   render() {
