@@ -4,12 +4,16 @@
   overflow: visible;
 }
 
-.ChecklistItem.selected {
-  background: #ddd;
+.ChecklistItem.disabled .ChecklistCell {
+  color: rgba(0, 0, 0, 0.5);
 }
 
-.ChecklistItem:hover {
-  background: #eee;
+.ChecklistItem.selected .ChecklistCell {
+  background-color: #ddd;
+}
+
+.ChecklistItem:hover .ChecklistCell {
+  background-color: #eee;
 }
 
 .ChecklistCell {
