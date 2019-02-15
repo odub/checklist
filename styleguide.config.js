@@ -1,5 +1,4 @@
 const path = require("path");
-const { version } = require("./package");
 
 module.exports = {
   webpackConfig: require("react-scripts/config/webpack.config"),
