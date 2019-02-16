@@ -1,4 +1,4 @@
-# Checklist task
+# Checklist
 
 To run the demo app:
 
