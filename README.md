@@ -1,6 +1,6 @@
 # Checklist task
 
-To run the specified demo app:
+To run the demo app:
 
 1. Clone the project.
 2. ```
