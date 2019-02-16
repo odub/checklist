@@ -2,7 +2,7 @@ export const colsToTemplate = cols =>
   [
     "36px",
     ...cols.map(
-      col => `minMax(${(col.width || 1) * 120}px, ${col.width || 1}fr)`
+      col => `minMax(${(col.width || 1) * 140}px, ${col.width || 1}fr)`
     )
   ].join(" ");
 
