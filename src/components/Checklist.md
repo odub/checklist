@@ -33,9 +33,7 @@ initialState = { selection: new Set() };
 />;
 ```
 
-`Checklist` separates data and presentation.
-
-The same items can be displayed differently by modifying the `cols` prop:
+`Checklist` separates data and presentation. The same items can be displayed differently by modifying the `cols` prop:
 
 ```js
 initialState = { selection: new Set() };
@@ -57,11 +55,12 @@ initialState = { selection: new Set() };
   ]}
   cols={[
     {
-      id: "price",
       name: "Cost",
+      id: "price",
       width: 0.25
     },
     {
+      name: "Ingredient",
       id: "name"
     }
   ]}
@@ -114,8 +113,7 @@ initialState = { selection: new Set() };
   items={[
     {
       name: "Milk",
-      price: "£0.50",
-      disabled: true
+      price: "£0.50"
     },
     {
       name: "Eggs",
@@ -123,7 +121,8 @@ initialState = { selection: new Set() };
     },
     {
       name: "Bread",
-      price: "£1.20"
+      price: "£1.20",
+      disabled: true
     }
   ]}
   cols={[
